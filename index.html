@@ -3,32 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="estilos.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Conversores</title>
 </head>
 <body>
-    <p>Bienvenidos a Programacion IV</p>
-    <form method="post">
-        <input pattern="[a-zA-ZñÑ ]{3,65}" required type="text" placeholder="Nombre">
-        <br><br>
-        <textarea pattern="[\w]{10,150}" required cols="30" rows="3"></textarea> <br>
-        <input required type="date" >
-        <input type="color" >
-        <input type="button" value="Registrar">
-        <input type="radio" name="cbo" id="suma">
-        <input type="radio" name="cbo" id="Resta">
-        <input type="radio" name="cbo" id="Multi">
-        <input type="radio" name="cbo" id="Division">
-        <br>
-        <input type="checkbox" id="php"> <label for="php">PHP</label for="">
-        <input type="checkbox" id="js"> <label for="js">JS</label>
-        <input type="checkbox" id="json"> <label for="json">JSON</label>
-        <input type="checkbox" id="nodejs"> <label for="nodejs">NodeJS</label>
-        <br>
-        <input type="submit" value="Guardar">
-</form>
-    
+    <form method="post" id ="frmconvers">
+    <header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href = "" class = " barra de navegacion de la marca"> 
+            <p class="lead"></p>Conversores</p>
+
+        </a>
+
+    </nav>
+    </header>
+    <main>
+      <div>
+          <p class = "lead">Tipo</p>
+          <select name="" class="form-control"id="SelectTipo">
+              <option value = "moneda">moneda</option>
+              <option value = "longitud">longitud</option>
+
+          </select>
+
+      </div>
+
+
+      <div>
+        <p class = "lead">De :</p>
+        <select name="" class="form-control"id="cboDe">
+         
+
+        </select>
+
+    </div>
+
+    <div>
+        <p class = "lead">A :</p>
+        <select name="" class="form-control"id="cboA">
+         
+
+        </select>
+
+    </div>
+    <br>
+    <p class = "lead">Cantidad a convertir</p>
+    <br>
+
+
+    <input type="text" >
+    <br>
+    <br>
+    <input type="submit" value="Convertir" class = "btn btn-primary" id="btncalcular">
+    <br>
+    <br>
+
+
+    <p id= "lblres">Respuesta  ? </p>
+
+    </main></form>
+    <script src = "main.js">
+
+</script>
+
 </body>
+
 </html>
