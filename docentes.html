@@ -12,12 +12,10 @@
     <form method="post" id="frmAlumno">
         <div class="container">
             <div class="fila">
-            <input pattern="[A-Z]{4}[0-9]{6}"required type="text"id="txtCodigoAlumno" placeholder="Codigo">
-      
+                <input pattern="^[A-Z]{4}[0-9]{6}" required type="text" placeholder="Codigo" id="txtCodigoAlumno">
             </div>
             <div required class="fila">
                 <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Nombre" id="txtNombreAlumno">
-          
             </div>
             <div class="fila">
                 <input required type="text" placeholder="Direccion" id="txtDireccionAlumno">
