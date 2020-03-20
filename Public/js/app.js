@@ -5,7 +5,21 @@ document.addEventListener("DOMContentLoaded",event=>{
         e.stopPropagation();
 
         let modulo = e.srcElement.dataset.modulo;
-        fetch('public/vistas/alumnos/alumnos.html').then( resp=>resp.text() ).then(resp=>{
+        fetch('public/vistas/alumnoss/alumnos.html').then( resp=>resp.text() ).then(resp=>{
+            $(`#vista-${modulo}`).innerHTML = resp;
+            
+            let btnCerrar = $(".close");
+            btnCerrar.addEventListener("click",event=>{
+                $(`#vista-${modulo}`).innerHTML = "";
+            });
+
+            let cuerpo = $("body"),
+                script = document.createElement("script");
+            script.src = `public/vistas/${modulo}/${modulo}.js`;
+            cuerpo.appendChild(script);
+        });
+        //intento de cambiar form
+        fetch('public/vistas/docentess/docentes.html').then( resp=>resp.text() ).then(resp=>{
             $(`#vista-${modulo}`).innerHTML = resp;
             
             let btnCerrar = $(".close");
