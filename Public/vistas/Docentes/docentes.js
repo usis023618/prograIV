@@ -7,11 +7,12 @@ frmAlumnos.addEventListener("submit",e=>{
     let docentes = {
         accion    : 'nuevo',
         codigo    : $("#txtCodigoDocente").value,
+        nescalafon   : $("#txtEscalafonDocente").value,
         nombre    : $("#txtNombreDocente").value,
         direccion : $("#txtDireccionDocente").value,
         telefono  : $("#txtTelefonoDocente").value
     };
-    fetch(`private/Modulos/Alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
+    fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&alumno=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaDocente").innerHTML = `
             <div class="alert alert-success" role="alert">
                 ${resp.msg}

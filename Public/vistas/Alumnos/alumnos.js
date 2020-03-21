@@ -13,9 +13,10 @@ frmAlumnos.addEventListener("submit",e=>{
     };
     fetch(`private/Modulos/Alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(alumnos)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaAlumno").innerHTML = `
-            <div class="alert alert-success" role="alert">
-                ${resp.msg}
-            </div>
-        `;
+        <div class="alert alert-success" role="alert">
+            ${resp.msg}
+        </div>
+    `
+       ;
     });
 });

@@ -3,7 +3,7 @@
 /**
  * Clase de conexion al servidor de BD
  */
-class Conexion{
+class DB{
     private $conexion='', $result='';
 
     public function Conexion($server, $user, $pass, $db){
@@ -17,6 +17,9 @@ class Conexion{
     }
     public function respuesta(){
         return $this->result;
+    }
+    public function id(){
+        return $this->result->id();
     }
 }
 ?>
