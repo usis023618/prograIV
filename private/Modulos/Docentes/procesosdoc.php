@@ -1,5 +1,5 @@
 <?php 
-include('../../config/config.php');
+include('../../Config/Config.php');
 $docentes = new docentes($conexion);
 
 $proceso = '';

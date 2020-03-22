@@ -15,16 +15,16 @@ document.addEventListener("DOMContentLoaded",event=>{
 }); 
 
  function mostrarVista(vistas){
-  fetch('public/vistas/${vistas}/${vistas}.html').then(resp=>resp.text()).then(resp =>{
-  document.getElementById('vistas-${$vistas}').innerHTML=resp;
+    fetch(`Public/vistas/${vistas}/${vistas}.html`).then(resp => resp.text()).then(resp =>{
+  document.getElementById(`vistas-${vistas}`).innerHTML=resp;
       let btnCerrar = $(".close");
             btnCerrar.addEventListener("click",event=>{
-                $(`#vista-${vista}`).innerHTML = "";
+                $(`#vistas-${vistas}`).innerHTML = "";
             });
 
             let cuerpo = $("body"),
                 script = document.createElement("script");
-            script.src = `public/vistas/${vistas}/${vistas}.js`;
+            script.src = `Public/vistas/${vistas}/${vistas}.js`;
             cuerpo.appendChild(script);
 
   });

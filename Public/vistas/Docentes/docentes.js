@@ -1,6 +1,6 @@
 var $ = el => document.querySelector(el),
-    frmAlumnos = $("#frmDocentes");
-frmAlumnos.addEventListener("submit",e=>{
+    frmDocentes = $("#frmDocentes");
+frmDocentes.addEventListener("submit",e=>{
     e.preventDefault();
     e.stopPropagation();
     
@@ -12,11 +12,12 @@ frmAlumnos.addEventListener("submit",e=>{
         direccion : $("#txtDireccionDocente").value,
         telefono  : $("#txtTelefonoDocente").value
     };
-    fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&alumno=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
+    fetch(`Private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&docentes=
+    ${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaDocente").innerHTML = `
-            <div class="alert alert-success" role="alert">
-                ${resp.msg}
-            </div>
-        `;
+        <div class="alert alert-success" role="alert">
+            ${resp.msg}
+        </div>
+    `;
     });
 });
