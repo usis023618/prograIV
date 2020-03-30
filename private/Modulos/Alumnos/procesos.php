@@ -1,7 +1,7 @@
 
 <?php 
 include('../../Config/Config.php');
-$alumno = new alumnos($conexion);
+$alumno = new alumno($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
@@ -10,7 +10,7 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 $alumno->$proceso( $_GET['alumno'] );
 print_r(json_encode($alumno->respuesta));
 
-class alumnos{
+class alumno{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
@@ -31,13 +31,16 @@ class alumnos{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
         }
+        if( empty($this->datos['telefono']) ){
+            $this->respuesta['msg'] = 'por favor ingrese telefono del estudiante';
+        }
         $this->almacenar_alumno();
     }
     private function almacenar_alumno(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
+                    INSERT INTO alumno (codigo,nombre,direccion,telefono) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
@@ -45,8 +48,38 @@ class alumnos{
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente :)';
+                
+            }else if($this->datos['accion']==='modificar'){
+                $this->db->consultas('
+                UPDATE alumno SET
+                     codigo     = "'. $this->datos['codigo'] .'",
+                     nombre     = "'. $this->datos['nombre'] .'",
+                     direccion  = "'. $this->datos['direccion'] .'",
+                     telefono   = "'. $this->datos['telefono'] .'"
+                 WHERE idAlumno = "'. $this->datos['idAlumno'] .'"
+             ');
+             $this->respuesta['msg'] = 'Registro actualizado correctamente';
+            
+
             }
         }
     }
+    public function buscarAlumno($valor=''){
+        $this->db->consultas('
+            select alumno.idAlumno, alumno.codigo, alumno.nombre, alumno.direccion, alumno.telefono
+            from alumno
+            where alumno.codigo like "%'.$valor.'%" or alumno.nombre like "%'.$valor.'%"
+        ');
+        return $this->respuesta = $this->db->obtener_datos();
+    }
+    public function eliminarAlumno($idAlumno=''){
+        $this->db->consultas('
+            delete alumno
+            from alumno
+            where alumno.idAlumno = "'.$idAlumno.'"
+        ');
+        $this->respuesta['msg'] = 'Registro eliminado correctamente';
+    }
 }
+
 ?> 
