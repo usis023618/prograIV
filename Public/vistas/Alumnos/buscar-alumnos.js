@@ -22,7 +22,7 @@ export function modulo(){
             let filas = '';
             resp.forEach(alumno => {
                 filas += `
-                    <tr data-idalumno='${alumno.idAlumno}' data-alumno='${JSON.stringify(alumno)}'>
+                    <tr data-idalumno='${alumno.idAlumno}' data-idalumno='${JSON.stringify(alumno)}'>
                         <td>${alumno.codigo}</td>
                         <td>${alumno.nombre}</td>
                         <td>${alumno.direccion}</td>
@@ -39,7 +39,7 @@ export function modulo(){
                     let confirmacion = confirm(`¿Seguro que quiere eliminar el registro?`)
 
                     if (confirmacion == true) {
-                    eliminarAlumno( e.srcElement.parentNode.parentNode.dataset.idAlumno );
+                    eliminarAlumno( e.srcElement.parentNode.parentNode.dataset.idalumno );
                     }
                 } else {
                     modificarAlumno( JSON.parse(e.srcElement.parentNode.dataset.alumno) );

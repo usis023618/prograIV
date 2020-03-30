@@ -11,7 +11,7 @@ export function modulo(){
             codigo    : $("#txtCodigoDocente").value,
             nombre    : $("#txtNombreDocente").value,
             direccion : $("#txtDireccionDocente").value,
-           escalafon  : $("#txtEscalafonDocente").value,
+         
             telefono  : $("#txtTelefonoDocente").value,
            
         };
