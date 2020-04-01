@@ -25,24 +25,34 @@
                     <input pattern="[A-Za-zÑñ]{3,60}" type="text" id="txtNombreDocente" placeholder="AAA AAA" class="form-control">
                 </div>
             </div>
-            
-            </div>
             <div class="row p-2">
                 <div class="col-4">
-                        DUI
+                    DIRECCION
                 </div>
                 <div class="col-8">
-                    <input pattern="[0-9]{8}-[0-9]{1}"type="text" id="txtDireccionDocente" placeholder="00000000-0" class="form-control">
+                    <input pattern="[A-Za-zÑñ]{3,60}"type="text" id="txtDireccionDocente" placeholder="AAAAA" class="form-control">
                 </div>
             </div>
+            
             <div class="row p-2">
                 <div class="col-4">
-                        TEL
+                    TEL
                 </div>
                 <div class="col-8">
                     <input pattern="[0-9]{4}-[0-9]{4}" type="text" id="txtTelefonoDocente" placeholder="0000-0000" class="form-control">
                 </div>
             </div>
+
+            <div class="row p-2">
+                <div class="col-4">
+                    NIT
+                </div>
+                <div class="col-8">
+                    <input pattern="[0-9]{4}-[0-9]{6}-[0-9]{3}-[0-9]{1}" type="text" id="txtNitDocente" placeholder="0000-000000-000-0" class="form-control">
+                </div>
+            </div>
+            
+        
             <div class="row p-2"> 
                 <div class="col-12 text-center">
                     <input id="btnGuardarDocente" type="submit" class="btn btn-outline-primary text-white" value="Guardar">

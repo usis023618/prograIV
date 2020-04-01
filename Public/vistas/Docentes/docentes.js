@@ -1,21 +1,21 @@
-export function modulo(){
+export function modulo() {
     var $ = el => document.querySelector(el),
         frmDocentes = $("#frm-docentes");
-    frmDocentes.addEventListener("submit",e=>{
+    frmDocentes.addEventListener("submit", e => {
         e.preventDefault();
         e.stopPropagation();
-        
-        let docente = {
-            accion    : frmDocentes.dataset.accion,
-            idDocente  : frmDocentes.dataset.idDocente,
-            codigo    : $("#txtCodigoDocente").value,
-            nombre    : $("#txtNombreDocente").value,
-            direccion : $("#txtDireccionDocente").value,
-         
-            telefono  : $("#txtTelefonoDocente").value,
-           
+
+        let docentes = {
+            accion: frmDocentes.dataset.accion,
+            idDocente: frmDocentes.dataset.iddocente,
+            codigo: $("#txtCodigoDocente").value,
+            nombre: $("#txtNombreDocente").value,
+            direccion: $("#txtDireccionDocente").value,
+            telefono: $("#txtTelefonoDocente").value,
+            NIT: $("#txtNitDocente").value
+            
         };
-        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&docente=${JSON.stringify(docente)}`).then( resp=>resp.json() ).then(resp=>{
+        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then(resp => resp.json()).then(resp => {
             $("#respuestaDocente").innerHTML = `
                 <div class="alert alert-success" role="alert">
                     ${resp.msg}
@@ -23,8 +23,8 @@ export function modulo(){
             `;
         });
     });
-    frmDocentes.addEventListener("reset",e=>{
+    frmDocentes.addEventListener("reset", e => {
         $("#frm-docentes").dataset.accion = 'nuevo';
-        $("#frm-docentes").dataset.idDocente = '';
+        $("#frm-docentes").dataset.iddocente = '';
     });
 }

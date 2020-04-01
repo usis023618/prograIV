@@ -19,11 +19,11 @@ export function modulo(){
         });
     };
     let traerDatos = (valor)=>{
-        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=buscarDocente&docentes=${valor}`).then( resp=>resp.json() ).then(resp=>{
+        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=buscarDocente&docente=${valor}`).then( resp=>resp.json() ).then(resp=>{
             let filas = ''
             resp.forEach(docente => {
                 filas += `
-                    <tr data-idDocente='${docente.idDocente}'data-idDocente='${ JSON.stringify(docente) }'>
+                    <tr data-idDocente='${docente.idDocente}'data-iddocente='${ JSON.stringify(docente) }'>
                         <td>${docente.codigo}</td>
                         <td>${docente.nombre}</td>
                         <td>${docente.direccion}</td>
@@ -41,7 +41,7 @@ export function modulo(){
                     let confirmacion = confirm(`¿Seguro que quiere eliminar el registro?`)
 
                     if (confirmacion == true) {
-                    eliminarDocente( e.srcElement.parentNode.parentNode.dataset.idDocente );
+                    eliminarDocente( e.srcElement.parentNode.parentNode.dataset.iddocente );
                     }
                 } else {
                     modificarDocente( JSON.parse(e.srcElement.parentNode.dataset.docente) );

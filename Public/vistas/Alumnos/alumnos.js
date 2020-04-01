@@ -12,6 +12,7 @@ export function modulo(){
             nombre    : $("#txtNombreAlumno").value,
             direccion : $("#txtDireccionAlumno").value,
             telefono  : $("#txtTelefonoAlumno").value
+    
         };
         fetch(`private/Modulos/Alumnos/procesos.php?proceso=recibirDatos&alumno=
         ${JSON.stringify(alumno)}`).then( resp=>resp.json() ).then(resp=>{
