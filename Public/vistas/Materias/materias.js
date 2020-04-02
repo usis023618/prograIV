@@ -21,7 +21,7 @@ var appmateria = new Vue({
                     this.materia.modalidad = '';
                     this.materia.informacion = '';
                     this.materia.accion = 'nuevo';
-                    appBuscarMateria.buscarMateria();
+                    appBuscarMaterias.buscarMateria();
                  });
         }
         }

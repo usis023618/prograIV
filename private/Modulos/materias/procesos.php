@@ -64,7 +64,7 @@ class materia{
             from materia
             where materia.codigo like "%'. $valor .'%" or materia.nombre like "%'. $valor .'%" or materia.modalidad like "%' . $valor .'%"
         ');
-        return $this->respuesta = $this->db->obtener_data();
+        return $this->respuesta = $this->db->obtener_datos();
     }
     public function eliminarMateria($idMateria = 0){
         $this->db->consultas('
