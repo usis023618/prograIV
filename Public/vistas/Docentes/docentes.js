@@ -5,17 +5,17 @@ export function modulo() {
         e.preventDefault();
         e.stopPropagation();
 
-        let docentes = {
+        let docente = {
             accion: frmDocentes.dataset.accion,
             idDocente: frmDocentes.dataset.iddocente,
             codigo: $("#txtCodigoDocente").value,
             nombre: $("#txtNombreDocente").value,
             direccion: $("#txtDireccionDocente").value,
             telefono: $("#txtTelefonoDocente").value,
-            NIT: $("#txtNitDocente").value
+            DUI: $("#txtDuiDocente").value
             
         };
-        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then(resp => resp.json()).then(resp => {
+        fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=recibirDatos&docente=${JSON.stringify(docente)}`).then(resp => resp.json()).then(resp => {
             $("#respuestaDocente").innerHTML = `
                 <div class="alert alert-success" role="alert">
                     ${resp.msg}
@@ -25,6 +25,6 @@ export function modulo() {
     });
     frmDocentes.addEventListener("reset", e => {
         $("#frm-docentes").dataset.accion = 'nuevo';
-        $("#frm-docentes").dataset.iddocente = '';
+        $("#frm-docentes").dataset.idDocente = '';
     });
 }

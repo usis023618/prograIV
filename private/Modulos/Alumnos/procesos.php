@@ -31,9 +31,6 @@ class alumno{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
         }
-        if( empty($this->datos['telefono']) ){
-            $this->respuesta['msg'] = 'por favor ingrese telefono del estudiante';
-        }
         $this->almacenar_alumno();
     }
     private function almacenar_alumno(){
@@ -47,20 +44,17 @@ class alumno{
                         "'. $this->datos['telefono'] .'"
                     )
                 ');
-                $this->respuesta['msg'] = 'Registro insertado correctamente :)';
-                
-            }else if($this->datos['accion']==='modificar'){
+                $this->respuesta['msg'] = 'Registro insertado correctamente';
+            } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
-                UPDATE alumno SET
-                     codigo     = "'. $this->datos['codigo'] .'",
-                     nombre     = "'. $this->datos['nombre'] .'",
-                     direccion  = "'. $this->datos['direccion'] .'",
-                     telefono   = "'. $this->datos['telefono'] .'"
-                 WHERE idAlumno = "'. $this->datos['idAlumno'] .'"
-             ');
-             $this->respuesta['msg'] = 'Registro actualizado correctamente';
-            
-
+                   UPDATE alumno SET
+                        codigo     = "'. $this->datos['codigo'] .'",
+                        nombre     = "'. $this->datos['nombre'] .'",
+                        direccion  = "'. $this->datos['direccion'] .'",
+                        telefono   = "'. $this->datos['telefono'] .'"
+                    WHERE idAlumno = "'. $this->datos['idAlumno'] .'"
+                ');
+                $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
         }
     }
@@ -81,5 +75,4 @@ class alumno{
         $this->respuesta['msg'] = 'Registro eliminado correctamente';
     }
 }
-
-?> 
+?>

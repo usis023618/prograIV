@@ -33,22 +33,19 @@ class docente{
         if( empty($this->datos['telefono']) ){
             $this->respuesta['msg'] = 'por favor ingrese el telefono del docente';
         }
-        if( empty($this->datos['NIT']) ){
-            $this->respuesta['msg'] = 'por favor ingrese NIT del docente';
-        }
-        
+      
         $this->almacenar_docentes();
     }
     private function almacenar_docentes(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO docente (codigo,nombre,direccion,telefono,NIT) VALUES(
+                    INSERT INTO docente (codigo,nombre,direccion,telefono,DUI) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['direccion'] .'",
                         "'. $this->datos['telefono'] .'",
-                        "'. $this->datos['NIT'] .'"
+                        "'. $this->datos['DUI'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro Docente insertado correctamente';
@@ -59,7 +56,7 @@ class docente{
                      nombre     = "'. $this->datos['nombre'] .'",
                      direccion  = "'. $this->datos['direccion'] .'",
                      telefono   = "'. $this->datos['telefono'] .'",
-                     NIT   = "'. $this->datos['NIT'] .'"
+                     DUI   = "'. $this->datos['DUI'] .'"
                  WHERE idDocente = "'. $this->datos['idDocente'] .'"
              ');
              $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -70,9 +67,9 @@ class docente{
     }
     public function buscarDocente($valor=''){
         $this->db->consultas('
-            select docente.idDocente, docente.codigo, docente.nombre, docente.direccion, docente.telefono,docente.NIT
+            select docente.idDocente, docente.codigo, docente.nombre, docente.direccion, docente.telefono,docente.DUI
             from docente
-            where docente.codigo like "%'.$valor.'%" or docente.nombre like "%'.$valor.'%" or docente.NIT like "%'.$valor.'%"
+            where docente.codigo like "%'.$valor.'%" or docente.nombre like "%'.$valor.'%" or docente.DUI like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
