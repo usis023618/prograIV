@@ -62,7 +62,7 @@ class alumno{
         $this->db->consultas('
             select alumno.idAlumno, alumno.codigo, alumno.nombre, alumno.direccion, alumno.telefono
             from alumno
-            where alumno.codigo like "%'.$valor.'%" or alumno.nombre like "%'.$valor.'%"
+            where alumno.codigo like "%'.$valor.'%" or alumno.nombre like "%'.$valor.'%" or alumno.direccion like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
