@@ -2,13 +2,13 @@ var appBuscarDocentes= new Vue({
     el: '#frm-buscar-docentes',
     
     data: {
-        docente: [],
+        misdocentes: [],
         valor: ''
     },
     methods: {
         buscarDocente: function () {
             fetch(`private/Modulos/Docentes/procesosdoc.php?proceso=buscarDocente&docente=${this.valor}`).then(resp => resp.json()).then(resp => {
-                this.docente = resp;
+                this.misdocentes = resp;
             });
         },
         modificarDocente: function (docente) {
