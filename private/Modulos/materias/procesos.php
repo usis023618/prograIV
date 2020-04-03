@@ -31,9 +31,9 @@ class materia{
             $this->respuesta['msg'] = 'por favor ingrese la Modalidad';
         }
 
-        $this->almacenar_docente();
+        $this->almacenar_materia();
     }
-    private function almacenar_docente(){
+    private function almacenar_materia(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
