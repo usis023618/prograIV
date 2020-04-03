@@ -37,7 +37,7 @@
                     TEL
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="docente.telefono" placeholder="0000-0000" class="form-control">
+                    <input pattern="[0-9]{4}-[0-9]{4}"type="text" v-model="docente.telefono" placeholder="0000-0000" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -45,7 +45,7 @@
                     DUI
                 </div>
                 <div class="col-6">
-                    <input type="text" v-model="docente.DUI" placeholder="00000000-0" class="form-control">
+                    <input pattern="[0-9]{8}-[0-9]{1}" type="text" v-model="docente.DUI" placeholder="00000000-0" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
