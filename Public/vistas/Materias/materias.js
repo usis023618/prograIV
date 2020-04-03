@@ -19,7 +19,7 @@ var appmateria = new Vue({
                     this.materia.codigo = '';
                     this.materia.nombre = '';
                     this.materia.modalidad = '';
-                    this.materia.informacion = '';
+                    this.materia.carrera = '';
                     this.materia.accion = 'nuevo';
                     appBuscarMaterias.buscarMateria();
                  });

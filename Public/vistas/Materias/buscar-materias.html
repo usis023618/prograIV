@@ -20,7 +20,7 @@
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>MODALIDAD</th>
-                        <th>INFORMACION</th>
+                        <th>CARRERA</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -30,7 +30,7 @@
                         <td>{{ asignatura.codigo }}</td>
                         <td>{{ asignatura.nombre }}</td>
                         <td>{{ asignatura.modalidad }}</td>
-                        <td>{{ asignatura.informacion }}</td>
+                        <td>{{ asignatura.carrera}}</td>
                         <td>
                             <input v-on:click="eliminarMateria(asignatura.idMateria)" type="button"
                                 class="btn btn-outline-danger text-white" value="del">
@@ -41,4 +41,4 @@
         </div>
     </div>
 </form>
-<script src="Public/vistas/Materias/buscar-materias.js"></script>
+<script src="public/vistas/Materias/buscar-materias.js"></script>

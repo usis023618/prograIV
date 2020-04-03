@@ -37,11 +37,11 @@ class materia{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO materia (codigo,nombre,modalidad,informacion) VALUES(
+                    INSERT INTO materia (codigo,nombre,modalidad,carrera) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['modalidad'] .'",
-                        "'. $this->datos['informacion'] .'"
+                        "'. $this->datos['carrera'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -51,7 +51,7 @@ class materia{
                         codigo      = "'. $this->datos['codigo'] .'",
                         nombre      = "'. $this->datos['nombre'] .'",
                         modalidad   = "'. $this->datos['modalidad'] .'",
-                        informacion    = "'. $this->datos['informacion'] .'"
+                        carrera    = "'. $this->datos['carrera'] .'"
                     WHERE idMateria = "'. $this->datos['idMateria'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -60,7 +60,7 @@ class materia{
     }
     public function buscarMateria($valor = ''){
         $this->db->consultas('
-            select materia.idMateria, materia.codigo, materia.nombre, materia.modalidad, materia.informacion
+            select materia.idMateria, materia.codigo, materia.nombre, materia.modalidad, materia.carrera
             from materia
             where materia.codigo like "%'. $valor .'%" or materia.nombre like "%'. $valor .'%" or materia.modalidad like "%' . $valor .'%"
         ');
