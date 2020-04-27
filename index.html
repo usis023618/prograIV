@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Academica </title>
+    <title>Peliculas </title>
     <link rel="stylesheet" href="public/css/estilos.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body class="bg-secondary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">::.App Academica.::</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-alumnos" data-modulo="alumnos" data-form="alumnos" href="#">ALUMNOS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-docentes" data-modulo="docentes" data-form="docentes" href="#">DOCENTES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-materias" data-modulo="materias" data-form="materias" href="#">MATERIAS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-matricula" data-modulo="matricula" href="#">MATRICULA</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-inscripcion" data-modulo="inscripcion" href="#">INSCRIPCION</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-notas" data-modulo="notas" href="#">NOTAS</a>
-                </li>
-            </ul>
+<body >
+    <nav class="navbar navbar-light" style="background-color: #d63447;">
+        <div class="container-fluid">
+            <a class="navbar-brand"href="#"><img src="peli.png" alt=""></a>
+            <h2 class="text-warning">Peliculas</h2>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link mostrar-usuario" data-modulo="usuario" data-form="usuario" href="#">INICIO</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link mostrar-capacitador" data-modulo="capacitador" data-form="capacitador" href="#">Juegos Niños</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mostrar-capacitador" data-modulo="capacitador" data-form="capacitador" href="#">Juegos Niños</a>
+                    </li>
+                 <li>
+                    <a class="nav-link mostrar-capacitador" data-modulo="capacitador" data-form="capacitador" href="#">Juegos Niños</a>
+                 </li>
+                   
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link " href="#"><span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+    
         </div>
+    
     </nav>
     <div class="container">
         <div id="modulos">
-            <div class="modulos" id="vista-alumnos"></div>
-            <div class="modulos" id="vista-buscar-alumnos"></div>
-            <div class="modulos" id="vista-docentes"></div>
-            <div class="modulos" id="vista-buscar-docentes"></div>
-            <div class="modulos" id="vista-materias"></div>
-            <div class="modulos" id="vista-buscar-materias"></div>
-            <div class="modulos" id="vista-matricula"></div>
-            <div class="modulos" id="vista-inscripcion"></div>
-            <div class="modulos" id="vista-notas"></div>
+            <div class="modulos" id="vista-cliente"></div>
+            <div class="modulos" id="vista-buscar-cliente"></div>
+            <div class="modulos" id="vista-pelicula"></div>
+            <div class="modulos" id="vista-buscar-pelicula"></div>
+            <div class="modulos" id="vista-alquiler"></div>
+            <div class="modulos" id="vista-buscar-alquiler"></div>
+            
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

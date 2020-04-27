@@ -1,4 +1,4 @@
-var appBuscarAlumnos = new Vue({
+    var appBuscarAlumnos = new Vue({
     el: '#frm-buscar-alumnos',
     
     data: {
