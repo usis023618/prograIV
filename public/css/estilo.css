@@ -249,3 +249,19 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+.topcorner{
+	position:absolute;
+	top:0;
+	right:0;
+   }
+   .top{
+	position: absolute;
+	top: 10px;
+	left: 10px
+   }
+   .bg-secondary{
+    background-image: url(../../fondo.jpeg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
