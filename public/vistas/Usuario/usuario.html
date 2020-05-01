@@ -1,0 +1,66 @@
+<form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' method="post" id="frm-usuario">
+    <div class="card text-white bg-danger mb-3" style="max-width: 24rem;">
+        <div class="card-header">
+            Registro Usuario
+
+            <button type="button" id="btn-close-usuario" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            
+            <div class="row p-2">
+                
+                <div class="col-10">
+                    <input type="text" v-model="usuario.nombre" placeholder="            Nombre" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                 
+                </div>
+                <div class="col-10">
+                    <input type="text" v-model="usuario.apellido" placeholder="           Apellido" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                
+                </div>
+                <div class="col-10">
+                    <input type="email" v-model="usuario.correo" placeholder="           Correo" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                
+                </div>
+                <div class="col-10">
+                    <select name=""class="form-control"id="selectGenero" v-model="usuario.genero">
+                        <option value="">--Seleccionar Genero--</option>
+                        <option value="masculino">masculino</option>
+                        <option value="femenino">femenino</option>
+                    
+              </select>
+            </div>
+           
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <input id="btnGuardarUsuario" type="submit" class="btn btn-outline-warning text-white"
+                        value="Guardar">
+                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input type="button" class="btn btn-outline-warning mostrar-buscar-usuario text-white"
+                        data-modulo="usuario" data-form="buscar-usuario" value="Buscar">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ usuario.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="public/vistas/Usuario/usuario.js"></script>
