@@ -1,0 +1,10 @@
+.modulos{
+    position: absolute;
+}
+
+.bg-secondary{
+    background-image: url(../../fondo.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}

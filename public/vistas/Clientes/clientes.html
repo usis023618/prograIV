@@ -1,0 +1,62 @@
+<form v-on:submit.prevent="guardarCliente" data-accion="nuevo" data-idcliente='' method="post" id="frm-clientes">
+    <div class="card bg-light mb-3" style="max-width: 24rem;">
+        <div class="card-header" ><img src="cliente.png" alt="">
+            Clientes
+
+            <button type="button" id="btn-close-clientes" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    NOMBRE
+                </div>
+                <div class="col-6">
+                    <input type="text" v-model="clientes.nombre" class="form-control" placeholder="AAAA">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    DIRECCION
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="clientes.direccion"  class="form-control"placeholder="AAAAA">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                   TELEFONO
+                </div>
+                <div class="col-8">
+                    <input  type="text" v-model="clientes.telefono" placeholder="0000-0000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                   DUI
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="clientes.dui" placeholder="00000000-0" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <input id="btnGuardarClientes" type="submit" class="btn btn-primary"
+                        value="Guardar">
+                    <input type="reset" class="btn btn-primary" value="Limpiar">
+                    <input type="button" class="btn btn-primary mostrar-buscar-clientes text-white"
+                        data-modulo="clientes" data-form="buscar-clientes" value="Buscar" data-modulo="buscar-clientes">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ clientes.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="Public/vistas/Clientes/clientes.js"></script>
