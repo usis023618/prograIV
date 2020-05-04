@@ -21,20 +21,17 @@ class peliculas{
         $this->validar_datos();
     }
     private function validar_datos(){
-        if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo de la pelicula';
+        if( empty($this->datos['descripcion']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la descripcion de la pelicula';
         }
-        if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre de la pelicula';
+        if( empty($this->datos['sinopsis']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la sipnosis de la pelicula';
         }
         if( empty($this->datos['genero']) ){
             $this->respuesta['msg'] = 'por favor ingrese el genero de la pelicula';
         }
-        if( empty($this->datos['pais']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el pais de origen de la pelicula';
-        }
-        if( empty($this->datos['año']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el año de estreno de la pelicula';
+        if( empty($this->datos['duracion']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la duracion la pelicula';
         }
       
         $this->almacenar_peliculas();
@@ -43,23 +40,21 @@ class peliculas{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO peliculas (codigo,nombre,genero,pais,año) VALUES(
-                        "'. $this->datos['codigo'] .'",
-                        "'. $this->datos['nombre'] .'",
+                    INSERT INTO peliculas (descripcion,sinopsis,genero,duracion) VALUES(
+                        "'. $this->datos['descripcion'] .'",
+                        "'. $this->datos['sinopsis'] .'",
                         "'. $this->datos['genero'] .'",
-                        "'. $this->datos['pais'] .'",
-                        "'. $this->datos['año'] .'"
+                        "'. $this->datos['duracion'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Pelicula Registrada';
             }else if($this->datos['accion']==='modificar'){
                 $this->db->consultas('
                 UPDATE peliculas SET
-                     codigo     = "'. $this->datos['codigo'] .'",
-                     nombre     = "'. $this->datos['nombre'] .'",
-                     genero     = "'. $this->datos['genero'] .'",
-                     pais       = "'. $this->datos['pais'] .'",
-                     año        = "'. $this->datos['año'] .'"
+                     descripcion     = "'. $this->datos['descripcion'] .'",
+                     sinopsis        = "'. $this->datos['sinopsis'] .'",
+                     genero          = "'. $this->datos['genero'] .'",
+                     duracion        = "'. $this->datos['duracion'] .'"
                  WHERE idPelicula = "'. $this->datos['idPelicula'] .'"
              ');
              $this->respuesta['msg'] = 'Pelicula actualizada con exito';
@@ -70,9 +65,9 @@ class peliculas{
     }
     public function buscarPeliculas($valor=''){
         $this->db->consultas('
-            select peliculas.idPelicula, peliculas.codigo, peliculas.nombre, peliculas.genero, peliculas.pais, peliculas.año
+            select peliculas.idPelicula, peliculas.descripcion, peliculas.sinopsis, peliculas.genero, peliculas.duracion
             from peliculas
-            where peliculas.codigo like "%'.$valor.'%" or peliculas.nombre like "%'.$valor.'%" or peliculas.genero like "%'.$valor.'%"
+            where peliculas.descripcion like "%'.$valor.'%" or " or peliculas.duracion like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
     }
