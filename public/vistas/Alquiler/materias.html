@@ -1,0 +1,62 @@
+<form v-on:submit.prevent="guardarAlquiler" data-accion="nuevo" data-idalquiler='' method="post" id="frm-alquiler">
+    <div class="card bg-light mb-3" style="max-width: 24rem;">
+        <div class="card-header"><img src="alquiler.png" alt="">
+           Registro ALquiler
+
+            <button type="button" id="btn-close-alquiler" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    CODIGO
+                </div>
+                <div class="col-6">
+                    <input type="text" v-model="alquiler.codigo" placeholder="AAAA000000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Nombre
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="alquiler.nombre" placeholder="AAA AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Modalidad
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="alquiler.modalidad" placeholder="AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Carrera
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="alquiler.carrera" placeholder="AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <input id="btnGuardarAlquiler" type="submit" class="btn btn-outline-primary text-white"
+                        value="Guardar">
+                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input type="button" class="btn btn-outline-success mostrar-buscar-alumnos text-white"
+                        data-modulo="alquiler" data-form="buscar-alquiler" value="Buscar">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ alquiler.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="Public/vistas/Alquiler/alquiler.js"></script>
