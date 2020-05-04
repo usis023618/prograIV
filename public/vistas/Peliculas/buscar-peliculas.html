@@ -12,26 +12,24 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor"v-on:keyup="buscarPelicula" placeholder="Codigo, Nombre o Genero" class="form-control">
+                            <input type="text" v-model="valor"v-on:keyup="buscarPelicula" placeholder="Genero o Duracion" class="form-control">
                         </th>
                     </tr>
                     <tr>
-                        <th>CODIGO</th>
-                        <th>NOMBRE</th>
+                        <th>DESCRIPCION</th>
+                        <th>SINOPSIS</th>
                         <th>GENERO</th>
-                        <th>PAIS</th> 
-                        <th>AÑO</th>
+                        <th>DURACION</th> 
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="peliculas in mispeliculas" :key="peliculas.idPelicula"
                     v-on:click="modificarPelicula(peliculas)">
-                    <td>{{ peliculas.codigo }}</td>
-                    <td>{{ peliculas.nombre }}</td>
+                    <td>{{ peliculas.descripcion }}</td>
+                    <td>{{ peliculas.sipnosis }}</td>
                     <td>{{ peliculas.genero }}</td>
-                    <td>{{ peliculas.pais }}</td>
-                    <td>{{ peliculas.año }}</td>
+                    <td>{{ peliculas.duracion }}</td>
                     <td>
                         <input v-on:click="eliminarPeliculas(peliculas.idPelicula)" type="button"
                             class="btn btn-outline-danger text-white" value="del">
