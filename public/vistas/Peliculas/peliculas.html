@@ -1,0 +1,70 @@
+<form v-on:submit.prevent="guardarPeliculas" data-accion="nuevo" data-iddocente='' method="post" id="frm-peliculas">
+    <div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
+        <div class="card-header">
+            Registro Peliculas
+
+            <button type="button" id="btn-close-peliculas" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    CODIGO
+                </div>
+                <div class="col-6">
+                    <input type="text" v-model="peliculas.codigo" placeholder="AAAA000000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    NOMBRE
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="peliculas.nombre" placeholder="AAA AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    GENERO
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="peliculas.genero" placeholder="AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    PAIS
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="peliculas.pais" placeholder="AAAAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    AÑO DE ESTRENO
+                </div>
+                <div class="col-6">
+                    <input  type="text" v-model="peliculas.año" placeholder="----" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <input id="btnGuardarPeliculas" type="submit" class="btn btn-primary"
+                        value="Guardar">
+                    <input type="reset" class="btn btn-primary" value="Limpiar">
+                    <input type="button" class="btn btn-primary mostrar-buscar-peliculas text-white"
+                        data-modulo="peliculas" data-form="buscar-peliculas" value="Buscar">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ peliculas.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="Public/vistas/Peliculas/peliculas.js"></script>
